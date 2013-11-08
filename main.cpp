@@ -1,7 +1,7 @@
 #include <iostream>
 #include "TString.h"
 using namespace std;
-
+// Testkommentar
 void main()
 {
 	TString demoString(15);
