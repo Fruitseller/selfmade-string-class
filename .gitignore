@@ -11,3 +11,20 @@
 *.lai
 *.la
 *.a
+
+# IDE specific
+*.sdf
+*.sln
+*.suo
+*.exe
+*.ilk
+*.pdb
+*.vcxproj
+*.vcxproj.filters
+*.tlog
+*.log
+*.obj
+*.lastbuildstate
+*.nativecodeanalysis.xml
+*.idb
+*.xml
