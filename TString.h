@@ -4,10 +4,15 @@
 class TString {  
 	private:   
 		int x;
+		char *string;
 
 	public: 
 		TString();
-		TString (int); 		~TString() ;
+		TString (char*);
+		~TString();
+		char* getString();
+		void setString(char*);
+		TString (int);
 		int test(); 
 };  
 
