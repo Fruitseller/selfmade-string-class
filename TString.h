@@ -15,7 +15,9 @@ class TString {
 		~TString();
 		char* getString();
 		void setString(char*);
-		TString (int); 
+		TString (int);
+		int findChar(char);
+		int length();
 };  
 
 #endif 

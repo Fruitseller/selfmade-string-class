@@ -47,3 +47,33 @@
 		this->x = number;
 	}
 
+	//LIEFERT DEN INDEX DES ERSTEN GEFUNDENEN ZEICHENS (0 BASIERUNG WIRD AUFGEHOBEN), WENN DAS ZEICHEN NICHT VORHANDEN IST LIEFERT DIE FUNKTION -1
+	int TString::findChar(char needle)
+	{
+		int returner = -1;
+
+		int i = 0;
+		while(this->getString()[i] != '\0')
+		{
+			if(this->getString()[i] == needle)
+			{
+				returner =  i;
+				return returner + 1;
+			}
+			i++;
+		};
+
+		return returner +1;
+	}
+
+	//LIEFERT DIE LÄNGE DES STRING OHNE NULLTERMINIERUNG
+	int TString::length()
+	{
+		int i=0;
+		while(this->getString()[i] != '\0')
+		{
+			i++;
+		};
+		return i;
+	}
+
