@@ -8,17 +8,18 @@
 		this->string = NULL;
 	}
 
-	TString::TString (char *input)
+	TString::TString(char *input)
 	{
-		this->string = new char[strlen(input) + 1];
-
-		strcpy(this->string, input);
+		this->string = NULL;
+		this->setString(input);
 	}
 
 	TString::~TString()
 	{
 		if (this->string != NULL)
+		{
 			delete[] this->string;
+		}
 	}
 
 	char* TString::getString()
@@ -32,14 +33,16 @@
 	void TString::setString(char *input)
 	{
 		if (this->string != NULL)
-		delete[] this->string;
+		{
+			delete[] this->string;
+		}
 
-	this->string = new char[strlen(input) + 1];
+		this->string = new char[strlen(input) + 1];
 
-	strcpy(this->string,input);
+		strcpy(this->string,input);
 	}
 
-	TString::TString (int number)
+	TString::TString(int number)
 	{
 		this->x = number;
 	}
