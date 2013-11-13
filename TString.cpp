@@ -5,36 +5,42 @@
 
 	TString::TString()
 	{
-		this->x = 0;
+		this->string = NULL;
 	}
 
-	TString::TString (char *string)
+	TString::TString (char *input)
 	{
-		this->string = string;
+		this->string = new char[strlen(input) + 1];
+
+		strcpy(this->string, input);
 	}
 
 	TString::~TString()
 	{
-		
+		if (this->string != NULL)
+			delete[] this->string;
 	}
 
 	char* TString::getString()
 	{
-		return this->string;
+		if (this->string != NULL)
+			return this->string;
+		else
+			return "Nix gesetzt";
 	}
 
-	void TString::setString(char *string)
+	void TString::setString(char *input)
 	{
+		if (this->string != NULL)
+		delete[] this->string;
 
+	this->string = new char[strlen(input) + 1];
+
+	strcpy(this->string,input);
 	}
 
 	TString::TString (int number)
 	{
 		this->x = number;
-	}
-
-	int TString::test()
-	{
-		return this->x;	
 	}
 
