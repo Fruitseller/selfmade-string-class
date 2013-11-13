@@ -2,7 +2,10 @@
 #define __TSTRING_H__
 
 #include <iostream>
+#include <string.h>
 #include <stdio.h>
+
+using namespace std;
 
 class TString {  
 	private:   
@@ -20,4 +23,5 @@ class TString {
 		int length();
 };  
 
-#endif 
+#endif
+
