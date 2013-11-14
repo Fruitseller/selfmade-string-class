@@ -14,10 +14,10 @@ class TString {
 
 	public: 
 		TString();
-		TString (char*);
+		TString (const char*);
 		~TString();
-		char* getString();
-		void setString(char*);
+		const char* getString();
+		void setString(const char*);
 		TString (int);
 		int findChar(char);
 		int length();

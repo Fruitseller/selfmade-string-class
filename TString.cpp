@@ -8,7 +8,7 @@
 		this->string = NULL;
 	}
 
-	TString::TString(char *input)
+	TString::TString(const char *input)
 	{
 		this->string = NULL;
 		this->setString(input);
@@ -22,7 +22,7 @@
 		}
 	}
 
-	char* TString::getString()
+	const char* TString::getString()
 	{
 		if (this->string != NULL)
 			return this->string;
@@ -30,7 +30,7 @@
 			return "Nix gesetzt";
 	}
 
-	void TString::setString(char *input)
+	void TString::setString(const char *input)
 	{
 		if (this->string != NULL)
 		{
