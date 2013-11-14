@@ -63,7 +63,7 @@
 			i++;
 		};
 
-		return returner +1;
+		return returner;
 	}
 
 	//LIEFERT DIE LÄNGE DES STRING OHNE NULLTERMINIERUNG
