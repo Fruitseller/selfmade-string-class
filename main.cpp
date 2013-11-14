@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-	TString demoString("Hallo test test. 1 2 3 test.");
-	cout << "getString() returned: " << demoString.getString() << endl;
+	TString getterString("Hallo test test. 1 2 3 test.");
+	cout << "getString() returned: " << getterString.getString() << endl;
 
 	/* LÄNGE DES STRINGS: */
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen
