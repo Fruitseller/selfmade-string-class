@@ -21,6 +21,9 @@ class TString {
 		TString (int);
 		int findChar(char);
 		int length();
+		void replaceChar(char, char);
+		void toUpper();
+		void toLower();
 };  
 
 #endif

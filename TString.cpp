@@ -47,6 +47,32 @@
 		this->x = number;
 	}
 
+	// CONVERTIERT DEN STRING ZU GROßBUCHSTABEN
+	void TString::toUpper()
+	{
+		for(int i=0; i <= this->length(); i++)
+		{
+			if(this->string[i] >= 97 && this->string[i] <= 122 )
+			{
+				this->string[i] -= 32;
+			}
+		}
+
+	}
+
+	// CONVERTIERT DEN STRING ZU KLEINBUCHSTABEN
+	void TString::toLower()
+	{
+		for(int i=0; i <= this->length(); i++)
+		{
+			if(this->string[i] >= 65 && this->string[i] <= 90 )
+			{
+				this->string[i] += 32;
+			}
+		}
+
+	}
+
 	//LIEFERT DEN INDEX DES ERSTEN GEFUNDENEN ZEICHENS (0 BASIERUNG WIRD AUFGEHOBEN), WENN DAS ZEICHEN NICHT VORHANDEN IST LIEFERT DIE FUNKTION -1
 	int TString::findChar(char needle)
 	{
@@ -75,5 +101,22 @@
 			i++;
 		};
 		return i;
+	}
+
+	//ERSETZT ALLE GEFUNDENEN CHARS('SEARCH') IM STRING MIT DEM CHAR 'REPLACE'
+	void TString::replaceChar(char search, char replace)
+	{
+		int length = this->length();
+		char * newString = this->string;
+
+		for(int x = 0; x < this->length(); x++)
+		{
+			if(newString[x] == search)
+			{
+				newString[x] = replace;
+			}
+		}
+
+		this->string = newString;
 	}
 
