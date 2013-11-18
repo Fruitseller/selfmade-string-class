@@ -20,7 +20,7 @@ class TString {
 		void SetString(const char*);
 		TString (int);
 		int FindChar(char);
-		int Length();
+		int GetLength();
 		void ReplaceChar(char, char);
 		void ToUpper();
 		void ToLower();

@@ -9,7 +9,7 @@ int main()
 
 	/* LÄNGE DES STRINGS: */
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen
-	cout << "Laenge des String: " << lengthString.Length() << endl;
+	cout << "Laenge des String: " << lengthString.GetLength() << endl;
 
 	TString findCharString("Hallo Fruchti");
 	char charToFind = 'u';

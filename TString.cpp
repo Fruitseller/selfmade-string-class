@@ -50,7 +50,7 @@
 	// CONVERTIERT DEN STRING ZU GROßBUCHSTABEN
 	void TString::ToUpper()
 	{
-		for(int i=0; i <= this->Length(); i++)
+		for(int i=0; i <= this->GetLength(); i++)
 		{
 			if(this->string[i] >= 97 && this->string[i] <= 122 )
 			{
@@ -63,7 +63,7 @@
 	// CONVERTIERT DEN STRING ZU KLEINBUCHSTABEN
 	void TString::ToLower()
 	{
-		for(int i=0; i <= this->Length(); i++)
+		for(int i=0; i <= this->GetLength(); i++)
 		{
 			if(this->string[i] >= 65 && this->string[i] <= 90 )
 			{
@@ -93,7 +93,7 @@
 	}
 
 	//LIEFERT DIE LÄNGE DES STRING OHNE NULLTERMINIERUNG
-	int TString::Length()
+	int TString::GetLength()
 	{
 		int i=0;
 		while(this->GetString()[i] != '\0')
@@ -106,10 +106,10 @@
 	//ERSETZT ALLE GEFUNDENEN CHARS('SEARCH') IM STRING MIT DEM CHAR 'REPLACE'
 	void TString::ReplaceChar(char search, char replace)
 	{
-		int length = this->Length();
+		int length = this->GetLength();
 		char * newString = this->string;
 
-		for(int x = 0; x < this->Length(); x++)
+		for(int x = 0; x < this->GetLength(); x++)
 		{
 			if(newString[x] == search)
 			{
