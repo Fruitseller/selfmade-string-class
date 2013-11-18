@@ -16,14 +16,14 @@ class TString {
 		TString();
 		TString (const char*);
 		~TString();
-		const char* getString();
-		void setString(const char*);
+		const char* GetString();
+		void SetString(const char*);
 		TString (int);
-		int findChar(char);
-		int length();
-		void replaceChar(char, char);
-		void toUpper();
-		void toLower();
+		int FindChar(char);
+		int Length();
+		void ReplaceChar(char, char);
+		void ToUpper();
+		void ToLower();
 };  
 
 #endif

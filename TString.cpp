@@ -11,7 +11,7 @@
 	TString::TString(const char *input)
 	{
 		this->string = NULL;
-		this->setString(input);
+		this->SetString(input);
 	}
 
 	TString::~TString()
@@ -22,7 +22,7 @@
 		}
 	}
 
-	const char* TString::getString()
+	const char* TString::GetString()
 	{
 		if (this->string != NULL)
 			return this->string;
@@ -30,7 +30,7 @@
 			return "Nix gesetzt";
 	}
 
-	void TString::setString(const char *input)
+	void TString::SetString(const char *input)
 	{
 		if (this->string != NULL)
 		{
@@ -48,9 +48,9 @@
 	}
 
 	// CONVERTIERT DEN STRING ZU GROßBUCHSTABEN
-	void TString::toUpper()
+	void TString::ToUpper()
 	{
-		for(int i=0; i <= this->length(); i++)
+		for(int i=0; i <= this->Length(); i++)
 		{
 			if(this->string[i] >= 97 && this->string[i] <= 122 )
 			{
@@ -61,9 +61,9 @@
 	}
 
 	// CONVERTIERT DEN STRING ZU KLEINBUCHSTABEN
-	void TString::toLower()
+	void TString::ToLower()
 	{
-		for(int i=0; i <= this->length(); i++)
+		for(int i=0; i <= this->Length(); i++)
 		{
 			if(this->string[i] >= 65 && this->string[i] <= 90 )
 			{
@@ -74,14 +74,14 @@
 	}
 
 	//LIEFERT DEN INDEX DES ERSTEN GEFUNDENEN ZEICHENS (0 BASIERUNG WIRD AUFGEHOBEN), WENN DAS ZEICHEN NICHT VORHANDEN IST LIEFERT DIE FUNKTION -1
-	int TString::findChar(char needle)
+	int TString::FindChar(char needle)
 	{
 		int returner = -1;
 
 		int i = 0;
-		while(this->getString()[i] != '\0')
+		while(this->GetString()[i] != '\0')
 		{
-			if(this->getString()[i] == needle)
+			if(this->GetString()[i] == needle)
 			{
 				returner =  i;
 				return returner + 1;
@@ -93,10 +93,10 @@
 	}
 
 	//LIEFERT DIE LÄNGE DES STRING OHNE NULLTERMINIERUNG
-	int TString::length()
+	int TString::Length()
 	{
 		int i=0;
-		while(this->getString()[i] != '\0')
+		while(this->GetString()[i] != '\0')
 		{
 			i++;
 		};
@@ -104,12 +104,12 @@
 	}
 
 	//ERSETZT ALLE GEFUNDENEN CHARS('SEARCH') IM STRING MIT DEM CHAR 'REPLACE'
-	void TString::replaceChar(char search, char replace)
+	void TString::ReplaceChar(char search, char replace)
 	{
-		int length = this->length();
+		int length = this->Length();
 		char * newString = this->string;
 
-		for(int x = 0; x < this->length(); x++)
+		for(int x = 0; x < this->Length(); x++)
 		{
 			if(newString[x] == search)
 			{
