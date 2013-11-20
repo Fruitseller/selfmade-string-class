@@ -54,7 +54,6 @@ int main()
 	char delimiter = ';';
 	splitString.split(delimiter);
 
-	system("pause");
 	return 0;
 }
 

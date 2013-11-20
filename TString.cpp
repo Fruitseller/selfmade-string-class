@@ -47,7 +47,7 @@
 		this->x = number;
 	}
 
-	// CONVERTIERT DEN STRING ZU GROßBUCHSTABEN
+	// CONVERTIERT DEN STRING ZU GROSSBUCHSTABEN
 	void TString::ToUpper()
 	{
 		for(int i=0; i <= this->GetLength(); i++)
@@ -83,7 +83,7 @@
 		return x;
 	}
 
-	// CONVERTIERT EINEN CHAR ZUM GROßBUCHSTABEN
+	// CONVERTIERT EINEN CHAR ZUM GROSSBUCHSTABEN
 	char TString::charToUpper(char x)
 	{
 		if(x >= 97 && x <= 122 )
@@ -112,7 +112,7 @@
 		return returner;
 	}
 
-	//LIEFERT DIE LÄNGE DES STRING OHNE NULLTERMINIERUNG
+	//LIEFERT DIE LAENGE DES STRING OHNE NULLTERMINIERUNG
 	int TString::GetLength()
 	{
 		int i=0;
@@ -248,3 +248,4 @@
 
 		return explodedString; 
 	}
+
