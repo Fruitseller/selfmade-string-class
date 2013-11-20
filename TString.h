@@ -24,6 +24,13 @@ class TString {
 		void ReplaceChar(char, char);
 		void ToUpper();
 		void ToLower();
+	    int countChar(char, bool);
+		char charToLower(char);
+		char charToUpper(char);
+		int getIndexOfChar(char, int, bool);
+		char** split(char);
+		char getLastChar();
+
 };  
 
 #endif

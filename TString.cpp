@@ -73,6 +73,26 @@
 
 	}
 
+	// CONVERTIERT EINEN CHAR ZUM KLEINBUCHSTABEN
+	char TString::charToLower(char x)
+	{
+		if(x >= 65 && x <= 90 )
+			{
+				x += 32;
+			}
+		return x;
+	}
+
+	// CONVERTIERT EINEN CHAR ZUM GROßBUCHSTABEN
+	char TString::charToUpper(char x)
+	{
+		if(x >= 97 && x <= 122 )
+		{
+			x -= 32;
+		}
+		return x;
+	}
+
 	//LIEFERT DEN INDEX DES ERSTEN GEFUNDENEN ZEICHENS (0 BASIERUNG WIRD AUFGEHOBEN), WENN DAS ZEICHEN NICHT VORHANDEN IST LIEFERT DIE FUNKTION -1
 	int TString::FindChar(char needle)
 	{
@@ -120,3 +140,111 @@
 		this->string = newString;
 	}
 
+	//LIEFERT DIE ANZAHL DER GEFUNDENEN CHARS IM STRING
+	// WENN caseSensitive AUF FALSE STEHT WIRD ALLES IN KLEINBUCHSTABEN UMGEWANDELT
+	int TString::countChar(char c, bool caseSensitive = false)
+	{
+		char *dummy;
+		dummy = this->string;
+
+		if(!caseSensitive)
+		{
+			for(int i=0; i <= this->GetLength(); i++)
+			{
+				dummy[i] = this->charToLower(dummy[i]);
+			}
+			c = this->charToLower(c);
+		}
+
+		int i=0;
+		int count = 0;
+		while(dummy[i] != '\0')
+		{
+			if(dummy[i] == c)
+			{
+				count++;
+			}
+			i++;
+		};
+		return count;
+	}
+
+	// LIEFERT -1 WENN NICHTS GEFUNDEN WURDE
+	int TString::getIndexOfChar(char x, int start = 0, bool caseSensitive = true)
+	{
+		int index = -1;
+		char *dummy;
+		dummy = this->string;
+
+		if(!caseSensitive)
+		{
+			for(int i=0; i <= this->GetLength(); i++)
+			{
+				dummy[i] = this->charToLower(dummy[i]);
+			}
+			x = this->charToLower(x);
+		}
+		
+		if(start < this->GetLength() && start >= 0)
+		{
+			int i = start;
+			for(i; i <= this->GetLength(); i++)
+			{
+				if(dummy[i] == x)
+				{
+					return i;
+				}
+			}
+		}
+		return index;
+	}
+
+
+	char TString::getLastChar()
+	{
+		int index = this->GetLength() -1;
+		return this->string[index];
+	}
+
+
+	char** TString::split(char delimiter)
+	{
+		// ALS ERSTES WIRD DIE ANZAHL DER TRENZEICHEN ERMITTELT
+		int count = this->countChar(delimiter);
+		if(!this->getLastChar() == delimiter)
+		{
+			count ++;
+		}
+		// DANN DIE GROESSE DES ARRAYS DER RUECKGABEWERTE FESTGELEGT
+		char ** explodedString = new char * [count];
+
+		int i = 0;
+		int nextIndex = this->getIndexOfChar(delimiter,0,true);
+		int wordCount = 0;
+
+		while(wordCount <= count + 1)
+		{
+			if(nextIndex == -1)
+			{
+				for(i; i < this->GetLength(); i++)
+				{
+					cout << this->string[i];
+				}
+			}
+			else
+			{
+				for(i; i < nextIndex; i++)
+				{
+					cout << this->string[i];
+				}
+			}
+			wordCount ++;
+			i++;
+			nextIndex = this->getIndexOfChar(delimiter,i,true);
+			cout << endl;
+		};
+		
+
+
+		return explodedString; 
+	}
