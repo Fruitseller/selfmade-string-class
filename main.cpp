@@ -51,8 +51,16 @@ int main()
 
 	// SPLIT SPLIT SPLIT
 	TString splitString("dieser;string;sollte;gesplittet;werden");
+	//TString splitString("dieser string enthaelt das trennzeichen leider nicht...");
 	char delimiter = ';';
-	splitString.split(delimiter);
+	char ** splittedWords = splitString.split(delimiter);
+	int counter = splitString.getSplitCount(delimiter);
+	for (unsigned int i= 0; i < counter; i++)
+	{
+		cout << splittedWords[i] << endl;
+	}
+
+
 
 	return 0;
 }

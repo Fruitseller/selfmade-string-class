@@ -30,6 +30,7 @@ class TString {
 		int getIndexOfChar(char, int, bool);
 		char** split(char);
 		char getLastChar();
+		int getSplitCount(char);
 
 };  
 

@@ -210,8 +210,9 @@
 	char** TString::split(char delimiter)
 	{
 		// ALS ERSTES WIRD DIE ANZAHL DER TRENZEICHEN ERMITTELT
-		int count = this->countChar(delimiter);
-		if(!this->getLastChar() == delimiter)
+		int count = 0;
+		count = this->getSplitCount(delimiter)-1;
+		if(count == 0)
 		{
 			count ++;
 		}
@@ -224,28 +225,45 @@
 
 		while(wordCount <= count + 1)
 		{
+			// FALLS DER DELIMITER IM STRING NICHT AUFTAUCHT WIRD DER GANZE STRING GEDINGST
 			if(nextIndex == -1)
 			{
-				for(i; i < this->GetLength(); i++)
-				{
-					cout << this->string[i];
-				}
+				explodedString[0] = this->string;
 			}
 			else
 			{
+				int length = (nextIndex - i) + 1;
+				char * splitWord = new char[length];
+				int x = 0;
 				for(i; i < nextIndex; i++)
 				{
-					cout << this->string[i];
+					splitWord[x] = this->string[i];
+					x++;
 				}
+				splitWord[length -1] = '\0';
+				explodedString[wordCount] = splitWord;
 			}
 			wordCount ++;
 			i++;
 			nextIndex = this->getIndexOfChar(delimiter,i,true);
-			cout << endl;
+			if(nextIndex == -1)
+				{
+					nextIndex = this->GetLength();
+				}
 		};
-		
-
 
 		return explodedString; 
+	}
+
+
+	int TString::getSplitCount(char delimiter)
+	{
+		int count = this->countChar(delimiter);
+		if(!this->getLastChar() == delimiter)
+		{
+			count ++;
+		}
+		// ARRAY GROESSE OHNE 0 BASIERUNG
+		return count +1;
 	}
 
