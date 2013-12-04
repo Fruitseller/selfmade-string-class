@@ -31,7 +31,6 @@ class TString {
 		char** split(char);
 		char getLastChar();
 		int getSplitCount(char);
-
 };  
 
 #endif

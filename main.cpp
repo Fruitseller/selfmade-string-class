@@ -55,9 +55,11 @@ int main()
 	char delimiter = ';';
 	char ** splittedWords = splitString.split(delimiter);
 	int counter = splitString.getSplitCount(delimiter);
+	TString aStrings = new TString[counter];
 	for (unsigned int i= 0; i < counter; i++)
 	{
-		cout << splittedWords[i] << endl;
+		aStrings[i].SetString(splittedWords[i]);
+		cout << aStrings[i].GetString() << endl;
 	}
 
 
