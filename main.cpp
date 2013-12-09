@@ -8,7 +8,7 @@ int main()
 	
 
 	TString getterString("12345678abcdefgh");
-	cout << "getString() returned: " << getterString.GetString() << endl;
+	cout << "getString() returned: " << getterString.getString() << endl;
 
 	cout << "shorten string: " << getterString.getString(5) << endl;
 	int index = 0;
@@ -21,29 +21,29 @@ int main()
 /*
 	// LAENGE DES STRINGS:
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen
-	cout << "Laenge des String: " << lengthString.GetLength() << endl;
+	cout << "Laenge des String: " << lengthString.getLength() << endl;
 
 	// EINZELNES ZECIHEN FINDEN 
 	TString findCharString("Hallo Fruchti");
 	char charToFind = 'u';
-	cout << "Index des gefundenen Zeichens: " << findCharString.FindChar(charToFind) << endl;
+	cout << "Index des gefundenen Zeichens: " << findCharString.findChar(charToFind) << endl;
 
 	// ZECIHEN ERSETZEN
 	TString replaceCharString("Hallo Fruchti");
 	char charToReplace = 'u';
 	char charToFillIn = 'x';
-	replaceCharString.ReplaceChar(charToReplace,charToFillIn);
-	cout << "Ersetzte Chars im String: " << replaceCharString.GetString() << endl;
+	replaceCharString.replaceChar(charToReplace,charToFillIn);
+	cout << "Ersetzte Chars im String: " << replaceCharString.getString() << endl;
 
 	// UMWANDELN IN GROSSBUCHSTABEN 
 	TString uppercaseString("Hallo Herbert gib mal ne Pizza mit Bacon !");
-	uppercaseString.ToUpper();
-	cout << "UPPERCASE: " << uppercaseString.GetString() << endl;
+	uppercaseString.toUpper();
+	cout << "UPPERCASE: " << uppercaseString.getString() << endl;
 
 	// UMWANDELN IN KLEINBUCHSTABEN 
 	TString lowercaseString("Im Idealfall enthaelt dieser String nur Kleinbuchstaben!");
-	lowercaseString.ToLower();
-	cout << "lowercase: " << lowercaseString.GetString() << endl;
+	lowercaseString.toLower();
+	cout << "lowercase: " << lowercaseString.getString() << endl;
 
 	// ZAEHLEN VON CHARS
 	TString countCharString("In diesem String werden einzelne Zeichen gezaehlt!");
@@ -68,15 +68,15 @@ int main()
 	TString aStrings = new TString[counter];
 	for (unsigned int i= 0; i < counter; i++)
 	{
-		aStrings[i].SetString(splittedWords[i]);
-		cout << aStrings[i].GetString() << endl;
+		aStrings[i].setString(splittedWords[i]);
+		cout << aStrings[i].getString() << endl;
 	}
 */
 
 	//TString a("teil1");
 	//TString b("Teil2");
-	//cout<<(a+b).GetString();
-	//cout<<a.GetString();
+	//cout<<(a+b).getString();
+	//cout<<a.getString();
 	
 	// Zuweisungsoperator
 	//TString A("Test");
@@ -84,7 +84,7 @@ int main()
 	//TString C("Test");
 
 	/*B = A;
-	cout<<B.GetString();
+	cout<<B.getString();
 
     cout<<(A > C);*/
 

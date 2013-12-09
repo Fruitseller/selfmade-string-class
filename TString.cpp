@@ -10,7 +10,7 @@
 	TString::TString(const char *input)
 	{
 		this->Str = NULL;
-		this->SetString(input);
+		this->setString(input);
 	}
 
 	TString::~TString()
@@ -21,7 +21,7 @@
 		}
 	}
 
-	const char* TString::GetString()
+	const char* TString::getString()
 	{
 		if (this->Str != NULL)
 			return this->Str;
@@ -31,10 +31,10 @@
 
 	const char* TString::getString(int index)
 	{
-		char *shortendString = new char[(this->GetLength() - index) + 1];
+		char *shortendString = new char[(this->getLength() - index) + 1];
 		int counter = 0;
 
-		for (int i = index; i < this->GetLength(); i++)
+		for (int i = index; i < this->getLength(); i++)
 		{
 			shortendString[counter] = this->Str[i];
 			counter++;
@@ -48,7 +48,7 @@
 		char *tinyString = new char[(end - begin) + 1];
 		int counter = 0;
 
-		for (int i = begin; i < this->GetLength(); i++)
+		for (int i = begin; i < this->getLength(); i++)
 		{
 			while (i != end)
 			{
@@ -63,7 +63,7 @@
 		}
 	}
 
-	void TString::SetString(const char *input)
+	void TString::setString(const char *input)
 	{
 		if (this->Str != NULL)
 		{
@@ -76,9 +76,9 @@
 	}
 
 	// CONVERTIERT DEN STRING ZU GROSSBUCHSTABEN
-	void TString::ToUpper()
+	void TString::toUpper()
 	{
-		for(int i=0; i <= this->GetLength(); i++)
+		for(int i=0; i <= this->getLength(); i++)
 		{
 			if(this->Str[i] >= 97 && this->Str[i] <= 122 )
 			{
@@ -89,9 +89,9 @@
 	}
 
 	// CONVERTIERT DEN STRING ZU KLEINBUCHSTABEN
-	void TString::ToLower()
+	void TString::toLower()
 	{
-		for(int i=0; i <= this->GetLength(); i++)
+		for(int i=0; i <= this->getLength(); i++)
 		{
 			if(this->Str[i] >= 65 && this->Str[i] <= 90 )
 			{
@@ -122,14 +122,14 @@
 	}
 
 	//LIEFERT DEN INDEX DES ERSTEN GEFUNDENEN ZEICHENS (0 BASIERUNG WIRD AUFGEHOBEN), WENN DAS ZEICHEN NICHT VORHANDEN IST LIEFERT DIE FUNKTION -1
-	int TString::FindChar(char needle)
+	int TString::findChar(char needle)
 	{
 		int returner = -1;
 
 		int i = 0;
-		while(this->GetString()[i] != '\0')
+		while(this->getString()[i] != '\0')
 		{
-			if(this->GetString()[i] == needle)
+			if(this->getString()[i] == needle)
 			{
 				returner =  i;
 				return returner + 1;
@@ -141,10 +141,10 @@
 	}
 
 	//LIEFERT DIE LAENGE DES STRING OHNE NULLTERMINIERUNG
-	int TString::GetLength()
+	int TString::getLength()
 	{
 		int i=0;
-		while(this->GetString()[i] != '\0')
+		while(this->getString()[i] != '\0')
 		{
 			i++;
 		};
@@ -152,12 +152,12 @@
 	}
 
 	//ERSETZT ALLE GEFUNDENEN CHARS('SEARCH') IM STRING MIT DEM CHAR 'REPLACE'
-	void TString::ReplaceChar(char search, char replace)
+	void TString::replaceChar(char search, char replace)
 	{
-		int length = this->GetLength();
+		int length = this->getLength();
 		char * newString = this->Str;
 
-		for(int x = 0; x < this->GetLength(); x++)
+		for(int x = 0; x < this->getLength(); x++)
 		{
 			if(newString[x] == search)
 			{
@@ -177,7 +177,7 @@
 
 		if(!caseSensitive)
 		{
-			for(int i=0; i <= this->GetLength(); i++)
+			for(int i=0; i <= this->getLength(); i++)
 			{
 				dummy[i] = this->charToLower(dummy[i]);
 			}
@@ -206,17 +206,17 @@
 
 		if(!caseSensitive)
 		{
-			for(int i=0; i <= this->GetLength(); i++)
+			for(int i=0; i <= this->getLength(); i++)
 			{
 				dummy[i] = this->charToLower(dummy[i]);
 			}
 			x = this->charToLower(x);
 		}
 		
-		if(start < this->GetLength() && start >= 0)
+		if(start < this->getLength() && start >= 0)
 		{
 			int i = start;
-			for(i; i <= this->GetLength(); i++)
+			for(i; i <= this->getLength(); i++)
 			{
 				if(dummy[i] == x)
 				{
@@ -230,7 +230,7 @@
 
 	char TString::getLastChar()
 	{
-		int index = this->GetLength() -1;
+		int index = this->getLength() -1;
 		return this->Str[index];
 	}
 
@@ -276,7 +276,7 @@
 			nextIndex = this->getIndexOfChar(delimiter,i,true);
 			if(nextIndex == -1)
 				{
-					nextIndex = this->GetLength();
+					nextIndex = this->getLength();
 				}
 		};
 
@@ -299,12 +299,12 @@
 	{
 		int counter = 0;
 
-		if (strlen(stringToFind) > this->GetLength())
+		if (strlen(stringToFind) > this->getLength())
 		{
 			return -1;
 		}
 
-		for (int i = 0; i < this->GetLength(); i++)
+		for (int i = 0; i < this->getLength(); i++)
 		{
 			while (this->Str[i] == stringToFind[counter])
 			{
@@ -328,14 +328,14 @@
 			char * dummy;
 			int gesamt;
 			TString Temp;
-			gesamt = strlen(Str);    //Str.GetLength();
-			gesamt += strlen(b.Str);//b.GetLength();
+			gesamt = strlen(Str);    //Str.getLength();
+			gesamt += strlen(b.Str);//b.getLength();
 			if (gesamt > 0)
 				{
 					dummy = new char[gesamt + 1];
 					strcpy (dummy,Str);
 					strcat (dummy, b.Str);
-					Temp.SetString(dummy);
+					Temp.setString(dummy);
 					delete [] dummy;
 					return Temp;
 				}
@@ -351,13 +351,13 @@
 
 	TString TString::operator= (TString inp)
 		{
-			SetString(inp.Str);
+			setString(inp.Str);
 			return Str;
 		}
 	bool TString::operator< (const TString inp)
 		{
 			int laengeA, laengeB;
-			laengeA = this->GetLength();
+			laengeA = this->getLength();
 			laengeB = strlen(inp.Str);
 			return(laengeA > laengeB );
 		}
@@ -365,7 +365,7 @@
 	bool TString::operator== (TString inp)
 		{
 			char *strA = this->Str;
-			int laengeStrA = this->GetLength();
+			int laengeStrA = this->getLength();
 			int laengeStrB = strlen(inp.Str);
 			if (laengeStrA < laengeStrB) 
 				{

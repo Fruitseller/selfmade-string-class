@@ -8,22 +8,20 @@
 using namespace std;
 class TString {  
 	private:   
-		int x;
-		//char *string;
 		char* Str;
 	public: 
 		TString();
 		TString (const char*);
 		~TString();
-		const char* GetString();
+		const char* getString();
 		const char* getString(int);
 		const char* getString(int, int);
-		void SetString(const char*);
-		int FindChar(char);
-		int GetLength();
-		void ReplaceChar(char, char);
-		void ToUpper();
-		void ToLower();
+		void setString(const char*);
+		int findChar(char);
+		int getLength();
+		void replaceChar(char, char);
+		void toUpper();
+		void toLower();
 	    int countChar(char, bool);
 		char charToLower(char);
 		char charToUpper(char);
