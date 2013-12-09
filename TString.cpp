@@ -1,8 +1,7 @@
 #include "TString.h"
 
-	int x;
-	//char *string;
 	char *Str;
+
 	TString::TString()
 	{
 		this->Str = NULL;
@@ -74,11 +73,6 @@
 		this->Str = new char[strlen(input) + 1];
 
 		strcpy(this->Str,input);
-	}
-
-	TString::TString(int number)
-	{
-		this->x = number;
 	}
 
 	// CONVERTIERT DEN STRING ZU GROSSBUCHSTABEN
