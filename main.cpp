@@ -15,6 +15,9 @@ int main()
 	index = getterString.findString("abc");
 	cout << "Founded specific string: " << getterString.getString(index) << endl;
 
+	TString sentence("Hallo und guten Tag meine Damen und Herren");
+	cout << "Output specific piece of String: " << sentence.getString(16, 19) << endl;
+
 /*
 	// LAENGE DES STRINGS:
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen

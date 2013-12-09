@@ -17,6 +17,7 @@ class TString {
 		~TString();
 		const char* GetString();
 		const char* getString(int);
+		const char* getString(int, int);
 		void SetString(const char*);
 		TString (int);
 		int FindChar(char);

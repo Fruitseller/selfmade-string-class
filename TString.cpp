@@ -44,6 +44,26 @@
 		return shortendString;
 	}
 
+	const char* TString::getString(int begin, int end)
+	{
+		char *tinyString = new char[(end - begin) + 1];
+		int counter = 0;
+
+		for (int i = begin; i < this->GetLength(); i++)
+		{
+			while (i != end)
+			{
+				tinyString[counter] = this->Str[i];
+				counter++;
+				i++;
+			}
+
+			tinyString[counter] = '\0';
+
+			return tinyString;
+		}
+	}
+
 	void TString::SetString(const char *input)
 	{
 		if (this->Str != NULL)
