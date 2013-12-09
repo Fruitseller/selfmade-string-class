@@ -281,6 +281,33 @@
 		return count +1;
 	}
 
+	int TString::findString(const char* stringToFind)
+	{
+		int counter = 0;
+
+		if (strlen(stringToFind) > this->GetLength())
+		{
+			return -1;
+		}
+
+		for (int i = 0; i < this->GetLength(); i++)
+		{
+			while (this->Str[i] == stringToFind[counter])
+			{
+				counter++;
+				i++;
+
+				if (counter == strlen(stringToFind))
+				{
+					return i - counter;
+				}
+			}
+
+		}
+
+		return -1;
+	}
+
 	TString TString::operator+ (TString b)
 		{   
 		

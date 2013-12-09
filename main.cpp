@@ -11,6 +11,10 @@ int main()
 	cout << "getString() returned: " << getterString.GetString() << endl;
 
 	cout << "shorten string: " << getterString.getString(5) << endl;
+	int index = 0;
+	index = getterString.findString("abc");
+	cout << "Founded specific string: " << getterString.getString(index) << endl;
+
 /*
 	// LAENGE DES STRINGS:
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen

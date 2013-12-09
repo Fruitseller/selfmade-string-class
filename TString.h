@@ -31,6 +31,7 @@ class TString {
 		char** split(char);
 		char getLastChar();
 		int getSplitCount(char);
+		int findString(const char*);
 
 		// ueberladene Operatoren
 		TString operator+ (TString);
