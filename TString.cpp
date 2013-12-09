@@ -1,45 +1,45 @@
 #include "TString.h"
 
 	int x;
-	char *string;
-
+	//char *string;
+	char *Str;
 	TString::TString()
 	{
-		this->string = NULL;
+		this->Str = NULL;
 	}
 
 	TString::TString(const char *input)
 	{
-		this->string = NULL;
+		this->Str = NULL;
 		this->SetString(input);
 	}
 
 	TString::~TString()
 	{
-		if (this->string != NULL)
+		if (this->Str != NULL)
 		{
-			delete[] this->string;
+			delete[] this->Str;
 		}
 	}
 
 	const char* TString::GetString()
 	{
-		if (this->string != NULL)
-			return this->string;
+		if (this->Str != NULL)
+			return this->Str;
 		else
 			return "Nix gesetzt";
 	}
 
 	void TString::SetString(const char *input)
 	{
-		if (this->string != NULL)
+		if (this->Str != NULL)
 		{
-			delete[] this->string;
+			delete[] this->Str;
 		}
 
-		this->string = new char[strlen(input) + 1];
+		this->Str = new char[strlen(input) + 1];
 
-		strcpy(this->string,input);
+		strcpy(this->Str,input);
 	}
 
 	TString::TString(int number)
@@ -52,9 +52,9 @@
 	{
 		for(int i=0; i <= this->GetLength(); i++)
 		{
-			if(this->string[i] >= 97 && this->string[i] <= 122 )
+			if(this->Str[i] >= 97 && this->Str[i] <= 122 )
 			{
-				this->string[i] -= 32;
+				this->Str[i] -= 32;
 			}
 		}
 
@@ -65,9 +65,9 @@
 	{
 		for(int i=0; i <= this->GetLength(); i++)
 		{
-			if(this->string[i] >= 65 && this->string[i] <= 90 )
+			if(this->Str[i] >= 65 && this->Str[i] <= 90 )
 			{
-				this->string[i] += 32;
+				this->Str[i] += 32;
 			}
 		}
 
@@ -127,7 +127,7 @@
 	void TString::ReplaceChar(char search, char replace)
 	{
 		int length = this->GetLength();
-		char * newString = this->string;
+		char * newString = this->Str;
 
 		for(int x = 0; x < this->GetLength(); x++)
 		{
@@ -137,7 +137,7 @@
 			}
 		}
 
-		this->string = newString;
+		this->Str = newString;
 	}
 
 	//LIEFERT DIE ANZAHL DER GEFUNDENEN CHARS IM STRING
@@ -145,7 +145,7 @@
 	int TString::countChar(char c, bool caseSensitive = false)
 	{
 		char *dummy;
-		dummy = this->string;
+		dummy = this->Str;
 
 		if(!caseSensitive)
 		{
@@ -174,7 +174,7 @@
 	{
 		int index = -1;
 		char *dummy;
-		dummy = this->string;
+		dummy = this->Str;
 
 		if(!caseSensitive)
 		{
@@ -203,7 +203,7 @@
 	char TString::getLastChar()
 	{
 		int index = this->GetLength() -1;
-		return this->string[index];
+		return this->Str[index];
 	}
 
 
@@ -228,7 +228,7 @@
 			// FALLS DER DELIMITER IM STRING NICHT AUFTAUCHT WIRD DER GANZE STRING GEDINGST
 			if(nextIndex == -1)
 			{
-				explodedString[0] = this->string;
+				explodedString[0] = this->Str;
 			}
 			else
 			{
@@ -237,7 +237,7 @@
 				int x = 0;
 				for(i; i < nextIndex; i++)
 				{
-					splitWord[x] = this->string[i];
+					splitWord[x] = this->Str[i];
 					x++;
 				}
 				splitWord[length -1] = '\0';
@@ -267,3 +267,66 @@
 		return count +1;
 	}
 
+	TString TString::operator+ (TString b)
+		{   
+		
+			char * dummy;
+			int gesamt;
+			TString Temp;
+			gesamt = strlen(Str);    //Str.GetLength();
+			gesamt += strlen(b.Str);//b.GetLength();
+			if (gesamt > 0)
+				{
+					dummy = new char[gesamt + 1];
+					strcpy (dummy,Str);
+					strcat (dummy, b.Str);
+					Temp.SetString(dummy);
+					delete [] dummy;
+					return Temp;
+				}
+			return Temp; 
+		}
+	bool TString::operator> (const TString inp)
+		{
+			int laengeA, laengeB;
+			laengeA = strlen(Str); 
+			laengeB = strlen(inp.Str);
+			return(laengeA > laengeB );
+		}
+
+	TString TString::operator= (TString inp)
+		{
+			SetString(inp.Str);
+			return Str;
+		}
+	bool TString::operator< (const TString inp)
+		{
+			int laengeA, laengeB;
+			laengeA = this->GetLength();
+			laengeB = strlen(inp.Str);
+			return(laengeA > laengeB );
+		}
+	
+	bool TString::operator== (TString inp)
+		{
+			char *strA = this->Str;
+			int laengeStrA = this->GetLength();
+			int laengeStrB = strlen(inp.Str);
+			if (laengeStrA < laengeStrB) 
+				{
+					// laengeStrB ist grösser
+					for (int i = 0; i <= laengeStrB; i++)
+						{
+							if (this->Str[i] != inp.Str[i]) return false;
+						}
+				}
+			else
+				{
+					for (int i = 0; i <= laengeStrA; i++)
+						{
+							if (this->Str[i] != inp.Str[i]) return false;
+						}
+				}
+			return true; // wird zurückgegeben wenn die Zeichenketten nicht ungleich sind
+
+		}

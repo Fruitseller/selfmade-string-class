@@ -6,12 +6,11 @@
 #include <stdio.h>
 
 using namespace std;
-
 class TString {  
 	private:   
 		int x;
-		char *string;
-
+		//char *string;
+		char* Str;
 	public: 
 		TString();
 		TString (const char*);
@@ -31,6 +30,16 @@ class TString {
 		char** split(char);
 		char getLastChar();
 		int getSplitCount(char);
+
+		// überladene Operatoren 
+		TString TString::operator+ (TString);
+		bool operator> (const TString);
+		bool operator< ( TString);
+		TString TString::operator= (TString);
+		bool TString::operator== (TString);
+
+		
+		
 };  
 
 #endif

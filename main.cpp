@@ -4,11 +4,11 @@ using namespace std;
 
 int main()
 {
-	/*
+	
 
 	TString getterString("Hallo test test. 1 2 3 test.");
 	cout << "getString() returned: " << getterString.GetString() << endl;
-
+/*
 	// LÄNGE DES STRINGS: 
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen
 	cout << "Laenge des String: " << lengthString.GetLength() << endl;
@@ -47,7 +47,7 @@ int main()
 	int index = indexOfCharString.getIndexOfChar(indexChar, 0, false);
 	cout << indexChar << " gefunden an Stelle: " << index << endl;
 
-	*/
+	
 
 	// SPLIT SPLIT SPLIT
 	TString splitString("dieser;string;sollte;gesplittet;werden");
@@ -61,9 +61,26 @@ int main()
 		aStrings[i].SetString(splittedWords[i]);
 		cout << aStrings[i].GetString() << endl;
 	}
+*/
 
+	//TString a("teil1");
+	//TString b("Teil2");
+	//cout<<(a+b).GetString();
+	//cout<<a.GetString();
+	
+	// Zuweisungsoperator
+	TString A("Test");
+	TString B;
+	TString C("Test");
 
+	/*B = A;
+	cout<<B.GetString();
 
+    cout<<(A > C);*/
+
+	cout<<(A == C);
+
+//	cout<<;
 	return 0;
 }
 
