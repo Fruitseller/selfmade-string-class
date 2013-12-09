@@ -32,11 +32,11 @@ class TString {
 		int getSplitCount(char);
 
 		// überladene Operatoren 
-		TString TString::operator+ (TString);
+		TString operator+ (TString);
 		bool operator> (const TString);
 		bool operator< ( TString);
-		TString TString::operator= (TString);
-		bool TString::operator== (TString);
+		TString operator= (TString);
+		bool operator== (TString);
 
 		
 		
