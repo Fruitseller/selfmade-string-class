@@ -16,6 +16,7 @@ class TString {
 		TString (const char*);
 		~TString();
 		const char* GetString();
+		const char* getString(int);
 		void SetString(const char*);
 		TString (int);
 		int FindChar(char);
@@ -31,7 +32,7 @@ class TString {
 		char getLastChar();
 		int getSplitCount(char);
 
-		// überladene Operatoren 
+		// ueberladene Operatoren
 		TString operator+ (TString);
 		bool operator> (const TString);
 		bool operator< ( TString);

@@ -1,15 +1,18 @@
 #include <iostream>
 #include "TString.h"
+
 using namespace std;
 
 int main()
 {
 	
 
-	TString getterString("Hallo test test. 1 2 3 test.");
+	TString getterString("12345678abcdefgh");
 	cout << "getString() returned: " << getterString.GetString() << endl;
+
+	cout << "shorten string: " << getterString.getString(5) << endl;
 /*
-	// LÄNGE DES STRINGS: 
+	// LAENGE DES STRINGS:
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen
 	cout << "Laenge des String: " << lengthString.GetLength() << endl;
 
@@ -69,18 +72,17 @@ int main()
 	//cout<<a.GetString();
 	
 	// Zuweisungsoperator
-	TString A("Test");
-	TString B;
-	TString C("Test");
+	//TString A("Test");
+	//TString B;
+	//TString C("Test");
 
 	/*B = A;
 	cout<<B.GetString();
 
     cout<<(A > C);*/
 
-	cout<<(A == C);
+	//cout<<(A == C);
 
-//	cout<<;
 	return 0;
 }
 

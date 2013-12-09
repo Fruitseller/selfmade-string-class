@@ -30,6 +30,20 @@
 			return "Nix gesetzt";
 	}
 
+	const char* TString::getString(int index)
+	{
+		char *shortendString = new char[(this->GetLength() - index) + 1];
+		int counter = 0;
+
+		for (int i = index; i < this->GetLength(); i++)
+		{
+			shortendString[counter] = this->Str[i];
+			counter++;
+		}
+
+		return shortendString;
+	}
+
 	void TString::SetString(const char *input)
 	{
 		if (this->Str != NULL)
