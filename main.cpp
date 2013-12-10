@@ -5,9 +5,8 @@ using namespace std;
 
 int main()
 {
-	
 
-	TString getterString("12345678abcdefgh");
+	TString getterString("abcdefgh");
 	cout << "getString() returned: " << getterString.getString() << endl;
 
 	cout << "shorten string: " << getterString.getString(5) << endl;

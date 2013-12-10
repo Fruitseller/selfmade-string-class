@@ -26,7 +26,7 @@
 		if (this->Str != NULL)
 			return this->Str;
 		else
-			return "Nix gesetzt";
+			return "\0";
 	}
 
 	const char* TString::getString(int index)
