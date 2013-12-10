@@ -11,14 +11,14 @@ int main()
 	cout << "getString() returned: " << getterString.getString() << endl;
 
 	cout << "shorten string: " << getterString.getString(5) << endl;
-	int index = 0;
-	index = getterString.findString("abc");
-	cout << "Founded specific string: " << getterString.getString(index) << endl;
+	int indexOfString = 0;
+	indexOfString = getterString.findString("abc");
+	cout << "Founded specific string: " << getterString.getString(indexOfString) << endl;
 
 	TString sentence("Hallo und guten Tag meine Damen und Herren");
 	cout << "Output specific piece of String: " << sentence.getString(16, 19) << endl;
 
-/*
+
 	// LAENGE DES STRINGS:
 	TString lengthString("Hallo Herbert wie gehts dir heute so?"); // 37 Zeichen
 	cout << "Laenge des String: " << lengthString.getLength() << endl;
@@ -57,21 +57,18 @@ int main()
 	int index = indexOfCharString.getIndexOfChar(indexChar, 0, false);
 	cout << indexChar << " gefunden an Stelle: " << index << endl;
 
-	
-
 	// SPLIT SPLIT SPLIT
 	TString splitString("dieser;string;sollte;gesplittet;werden");
 	//TString splitString("dieser string enthaelt das trennzeichen leider nicht...");
 	char delimiter = ';';
 	char ** splittedWords = splitString.split(delimiter);
-	int counter = splitString.getSplitCount(delimiter);
-	TString aStrings = new TString[counter];
-	for (unsigned int i= 0; i < counter; i++)
+	int counterTheSecond = splitString.getSplitCount(delimiter);
+	TString aStrings[counterTheSecond];
+	for (unsigned int i= 0; i < counterTheSecond; i++)
 	{
 		aStrings[i].setString(splittedWords[i]);
 		cout << aStrings[i].getString() << endl;
 	}
-*/
 
 	//TString a("teil1");
 	//TString b("Teil2");
