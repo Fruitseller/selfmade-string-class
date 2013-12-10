@@ -45,6 +45,9 @@
 
 	const char* TString::getString(int begin, int end)
 	{
+		if (begin > end || begin > this->getLength() || end > this->getLength())
+			return "\0";
+
 		char *tinyString = new char[(end - begin) + 1];
 		int counter = 0;
 
