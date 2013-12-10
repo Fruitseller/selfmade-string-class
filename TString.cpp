@@ -322,6 +322,13 @@
 		return -1;
 	}
 
+	bool TString::isStringInTString(const char* stringToFind)
+	{
+		if (this->findString(stringToFind) != -1)
+			return true;
+		return false;
+	}
+
 	TString TString::operator+ (TString b)
 		{   
 		

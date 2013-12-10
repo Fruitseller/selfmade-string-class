@@ -30,6 +30,7 @@ class TString {
 		char getLastChar();
 		int getSplitCount(char);
 		int findString(const char*);
+		bool isStringInTString(const char*);
 
 		// ueberladene Operatoren
 		TString operator+ (TString);
