@@ -78,52 +78,6 @@
 		strcpy(this->Str,input);
 	}
 
-	// CONVERTIERT DEN STRING ZU GROSSBUCHSTABEN
-	void TString::toUpper()
-	{
-		for(int i=0; i <= this->getLength(); i++)
-		{
-			if(this->Str[i] >= 97 && this->Str[i] <= 122 )
-			{
-				this->Str[i] -= 32;
-			}
-		}
-
-	}
-
-	// CONVERTIERT DEN STRING ZU KLEINBUCHSTABEN
-	void TString::toLower()
-	{
-		for(int i=0; i <= this->getLength(); i++)
-		{
-			if(this->Str[i] >= 65 && this->Str[i] <= 90 )
-			{
-				this->Str[i] += 32;
-			}
-		}
-
-	}
-
-	// CONVERTIERT EINEN CHAR ZUM KLEINBUCHSTABEN
-	char TString::charToLower(char x)
-	{
-		if(x >= 65 && x <= 90 )
-			{
-				x += 32;
-			}
-		return x;
-	}
-
-	// CONVERTIERT EINEN CHAR ZUM GROSSBUCHSTABEN
-	char TString::charToUpper(char x)
-	{
-		if(x >= 97 && x <= 122 )
-		{
-			x -= 32;
-		}
-		return x;
-	}
-
 	//LIEFERT DEN INDEX DES ERSTEN GEFUNDENEN ZEICHENS (0 BASIERUNG WIRD AUFGEHOBEN), WENN DAS ZEICHEN NICHT VORHANDEN IST LIEFERT DIE FUNKTION -1
 	int TString::findChar(char needle)
 	{
@@ -171,6 +125,32 @@
 		this->Str = newString;
 	}
 
+	// CONVERTIERT DEN STRING ZU GROSSBUCHSTABEN
+	void TString::toUpper()
+	{
+		for(int i=0; i <= this->getLength(); i++)
+		{
+			if(this->Str[i] >= 97 && this->Str[i] <= 122 )
+			{
+				this->Str[i] -= 32;
+			}
+		}
+
+	}
+
+	// CONVERTIERT DEN STRING ZU KLEINBUCHSTABEN
+	void TString::toLower()
+	{
+		for(int i=0; i <= this->getLength(); i++)
+		{
+			if(this->Str[i] >= 65 && this->Str[i] <= 90 )
+			{
+				this->Str[i] += 32;
+			}
+		}
+
+	}
+
 	//LIEFERT DIE ANZAHL DER GEFUNDENEN CHARS IM STRING
 	// WENN caseSensitive AUF FALSE STEHT WIRD ALLES IN KLEINBUCHSTABEN UMGEWANDELT
 	int TString::countChar(char c, bool caseSensitive = false)
@@ -198,6 +178,26 @@
 			i++;
 		};
 		return count;
+	}
+
+	// CONVERTIERT EINEN CHAR ZUM KLEINBUCHSTABEN
+	char TString::charToLower(char x)
+	{
+		if(x >= 65 && x <= 90 )
+			{
+				x += 32;
+			}
+		return x;
+	}
+
+	// CONVERTIERT EINEN CHAR ZUM GROSSBUCHSTABEN
+	char TString::charToUpper(char x)
+	{
+		if(x >= 97 && x <= 122 )
+		{
+			x -= 32;
+		}
+		return x;
 	}
 
 	// LIEFERT -1 WENN NICHTS GEFUNDEN WURDE
@@ -229,14 +229,6 @@
 		}
 		return index;
 	}
-
-
-	char TString::getLastChar()
-	{
-		int index = this->getLength() -1;
-		return this->Str[index];
-	}
-
 
 	char** TString::split(char delimiter)
 	{
@@ -286,6 +278,11 @@
 		return explodedString; 
 	}
 
+	char TString::getLastChar()
+	{
+		int index = this->getLength() -1;
+		return this->Str[index];
+	}
 
 	int TString::getSplitCount(char delimiter)
 	{
