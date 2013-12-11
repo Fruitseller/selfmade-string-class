@@ -7,6 +7,15 @@
 		this->Str = NULL;
 	}
 
+	TString::TString(const TString &orig):Str(NULL)
+	{
+		this->Str = NULL;
+		if (orig.Str != NULL)
+		{
+			this->setString(orig.Str);
+		}
+	}
+
 	TString::TString(const char *input)
 	{
 		this->Str = NULL;
@@ -329,9 +338,8 @@
 		return false;
 	}
 
-	TString TString::operator+ (TString b)
+	TString TString::operator+ (const TString &b)
 		{   
-		
 			char * dummy;
 			int gesamt;
 			TString Temp;
@@ -348,7 +356,7 @@
 				}
 			return Temp; 
 		}
-	bool TString::operator> (const TString inp)
+	bool TString::operator> (TString inp)
 		{
 			int laengeA, laengeB;
 			laengeA = strlen(Str); 

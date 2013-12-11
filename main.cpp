@@ -62,29 +62,31 @@ int main()
 	char delimiter = ';';
 	char ** splittedWords = splitString.split(delimiter);
 	int counterTheSecond = splitString.getSplitCount(delimiter);
-	TString aStrings[counterTheSecond];
+	//Works only with the GNU Compiler
+	//TString aStrings[counterTheSecond];
+	TString *aStrings = new TString[counterTheSecond];
 	for (unsigned int i= 0; i < counterTheSecond; i++)
 	{
 		aStrings[i].setString(splittedWords[i]);
 		cout << aStrings[i].getString() << endl;
 	}
 
-	//TString a("teil1");
-	//TString b("Teil2");
-	//cout<<(a+b).getString();
+	TString a("teil1");
+	TString b("Teil2");
+	cout<<(a+b).getString()<<endl;
 	//cout<<a.getString();
 	
 	// Zuweisungsoperator
-	//TString A("Test");
-	//TString B;
-	//TString C("Test");
+	TString A("Test");
+	TString B;
+	TString C("Test");
 
-	/*B = A;
+	B = A;
 	cout<<B.getString();
 
-    cout<<(A > C);*/
+    cout<<(A > C);
 
-	//cout<<(A == C);
+	cout<<(A == C);
 
 	return 0;
 }

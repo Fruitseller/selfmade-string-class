@@ -11,6 +11,7 @@ class TString {
 		char* Str;
 	public: 
 		TString();
+		TString(const TString&);
 		TString (const char*);
 		~TString();
 		const char* getString();
@@ -33,8 +34,8 @@ class TString {
 		bool isStringInTString(const char*);
 
 		// ueberladene Operatoren
-		TString operator+ (TString);
-		bool operator> (const TString);
+		TString operator+ (const TString&);
+		bool operator > (TString);
 		bool operator< ( TString);
 		TString operator= (TString);
 		bool operator== (TString);
